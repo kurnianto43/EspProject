@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Kulkas;
 use App\Tipe;
 use App\Kondisi;
+use PDF;
+use Carbon\Carbon;
 
 class KulkasController extends Controller
 {
@@ -37,6 +39,28 @@ class KulkasController extends Controller
 
     	]);
 
-    	return redirect()->route('kulkas.index');
+    	return redirect()->route('kulkas.index')->with('success', ' Data telah ditambahkan');
     }
+
+    public function edit()
+    {
+        return view('kulkas.edit');
+    }
+
+    public function create_pdf()
+    {
+        $kondisis = Kondisi::all();
+        $tipes = Tipe::all();
+        $kulkas = Kulkas::all();
+        $tgl = Carbon::now()->format('d-m-Y');
+        $pdf = PDF::loadView('kulkas.pdfInstore', compact('kulkas', 'tgl'));
+        $pdf->setPaper('a4', 'potrait');
+        return $pdf->download('data-instore-kulkas.pdf', compact('kulkas'));
+    }
+
+    public function getCreatedAtAttribute()
+    {
+        return \Carbon\Carbon::parse($this->attributes['tgl_masuk'])->format('d, M Y H:i');
+    }
+
 }

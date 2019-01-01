@@ -1,18 +1,18 @@
 @extends('layouts.master2')
 
 @section('link')
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
 @endsection
 
 @section('script')
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+    <script>
+        $( function() {
+        $( "#datepicker" ).datepicker();
+        } );
+    </script>
 @endsection
 
 @section('breadcumb')
@@ -29,7 +29,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Kulkas</a></li>
-                            <li class="active">Tambah Data</li>
+                            <li class="active">Edit Data</li>
                         </ol>
                     </div>
                 </div>
@@ -43,14 +43,14 @@
                             <div class="col-lg-8 offset-lg-2">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Form Tambah Data</strong>
+                                        <strong>Form Edit Data</strong>
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title">
-                                            <h3 class="text-center title-2">Tambah Data Kulkas</h3>
+                                            <h3 class="text-center title-2">Edit Data Kulkas</h3>
                                         </div>
                                         <hr>
-                                        <form action="{{ route('kulkas.store') }}" method="POST" novalidate="novalidate">
+                                        <form action="#" method="POST" novalidate="novalidate">
                                             {{ csrf_field() }}
                                             <div class="form-group">
                                                 <label for="nomor_asset" class="control-label mb-1">Nomor Asset</label>
@@ -91,8 +91,10 @@
                                             
                                             <div class="form-group">
                                                 <label for="datepicker" class="control-label mb-1">Tanggal Masuk</label>
-                                                <input id="datepicker" data-date-format="DD MMMM 00YY" name="tgl_masuk" type="date" class="form-control cc-number identified visa" value=""
-
+                                                <input id="datepicker" name="tgl_masuk" type="date" class="form-control cc-number identified visa" value="" data-val="true"
+                                                    data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"
+                                                    autocomplete="cc-number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                             </div>
                                             
                                             <div>

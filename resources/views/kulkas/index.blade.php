@@ -1,5 +1,9 @@
 @extends('layouts.master2')
 
+@section('title')
+Data Instore Kulkas
+@endsection
+
 @section('link')
     <link rel="stylesheet" href="vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
@@ -37,7 +41,7 @@
                             <div class="card-header">
                                 <strong class="card-title">Data Instore</strong>
                                 <a class="btn btn-primary btn-sm pull-right" href="{{ route('kulkas.create') }}"><i class="fa fa-plus"></i> Tambah</a>
-                                 <a style="margin-right: 5px" class="btn btn-secondary btn-sm pull-right" href="#"><i class="fa fa-print"></i> Cetak</a>
+                                 <a style="margin-right: 5px" class="btn btn-secondary btn-sm pull-right" href="{{ route('kulkas.pdf') }}"><i class="fa fa-print"></i> Cetak</a>
                             </div>
                             <div class="card-body">
 
@@ -59,9 +63,9 @@
                                             <td>{{ $kulkas -> nomor_seri }}</td>
                                             <td>{{ $kulkas -> tipe -> nama_tipe }}</td>
                                             <td>{{ $kulkas -> kondisi -> nama_kondisi }}</td>
-                                            <td>{{ $kulkas -> tgl_masuk }}</td>
+                                            <td>{{ $kulkas -> tgl_masuk->format('d-m-Y') }}</td>
                                             <td>
-                                                <a class="btn btn-warning btn-sm" href="#"><i class="fa fa-edit"></i> Edit</a>
+                                                <a class="btn btn-warning btn-sm" href="#"><i class="fa fa-edit"></i> Ubah</a>
                                                 <a class="btn btn-danger btn-sm" href="#"><i class="fa fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
@@ -84,4 +88,5 @@
     <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
     <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
+
 @endsection

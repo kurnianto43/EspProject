@@ -18,4 +18,8 @@ class Kulkas extends Model
     {
     	return $this->belongsTo('App\Tipe');
     }
+
+    protected $dates=[
+    	'tgl_masuk'
+    ];
 }

@@ -27,4 +27,5 @@ Route::middleware('role:admin')->group(function() {
 	Route::get('/data-kulkas', 'KulkasController@index')->name('kulkas.index');
 	Route::get('/tambah-data-kulkas', 'KulkasController@create')->name('kulkas.create');
 	Route::post('/tambah-data-kulkas', 'KulkasController@store')->name('kulkas.store');
+	Route::get('data-instore', 'KulkasController@create_pdf')->name('kulkas.pdf');
 });
