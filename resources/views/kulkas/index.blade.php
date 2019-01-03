@@ -53,7 +53,7 @@ Data Instore Kulkas
                                             <th>Tipe Kulkas</th>
                                             <th>Kondisi</th>
                                             <th>Tanggal Masuk</th>
-                                            <th>Akasi</th>
+                                            <th style="width: 130px;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -65,8 +65,16 @@ Data Instore Kulkas
                                             <td>{{ $kulkas -> kondisi -> nama_kondisi }}</td>
                                             <td>{{ $kulkas -> tgl_masuk->format('d-m-Y') }}</td>
                                             <td>
-                                                <a class="btn btn-warning btn-sm" href="#"><i class="fa fa-edit"></i> Ubah</a>
-                                                <a class="btn btn-danger btn-sm" href="#"><i class="fa fa-trash"></i> Hapus</a>
+                                                <a class="btn btn-warning btn-sm" href="{{ route('kulkas.edit', $kulkas) }}"><i class="fa fa-edit"></i> Ubah</a>
+                                                <div class="pull-right">
+                                                <form action="{{ route('kulkas.delete', $kulkas) }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i> Hapus</button>
+                                                   
+                                                    
+                                                </form>
+                                                </div>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -84,9 +92,9 @@ Data Instore Kulkas
 @endsection
 
 @section('js')
-        <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<!--         <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
     <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script> -->
     <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
 
 @endsection

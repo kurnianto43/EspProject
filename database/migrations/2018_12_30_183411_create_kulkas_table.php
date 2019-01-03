@@ -16,7 +16,7 @@ class CreateKulkasTable extends Migration
         Schema::create('kulkas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nomor_asset', 10)->unique();
-            $table->string('nomor_seri', 50);
+            $table->string('nomor_seri', 50)->unique();
             $table->integer('tipe_id')->unsigned();
             $table->integer('kondisi_id')->unsigned();
             $table->date('tgl_masuk');

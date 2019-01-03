@@ -11,6 +11,7 @@ use Carbon\Carbon;
 
 class KulkasController extends Controller
 {
+
     public function index()
     {
         $kulkas=Kulkas::all();
@@ -19,6 +20,7 @@ class KulkasController extends Controller
     	return view('kulkas.index', compact('kulkas', 'tipes', 'kondisis'));
     }
 
+
     public function create()
     {
 
@@ -26,6 +28,8 @@ class KulkasController extends Controller
         $kondisis=Kondisi::all();
     	return view('kulkas.tambah', compact('tipes', 'kondisis'));
     }
+
+
 
     public function store()
     {
@@ -42,10 +46,35 @@ class KulkasController extends Controller
     	return redirect()->route('kulkas.index')->with('success', ' Data telah ditambahkan');
     }
 
-    public function edit()
+
+    public function edit(Kulkas $kulkas)
     {
-        return view('kulkas.edit');
+        $kondisis = Kondisi::all();
+        $tipes = Tipe::all();
+
+        return view('kulkas.edit', compact('kulkas', 'tipes', 'kondisis'));
     }
+
+    public function update(Kulkas $kulkas)
+    {
+        $kulkas->update([
+            'nomor_asset' => request('nomor_asset'),
+            'nomor_seri' => request('nomor_seri'),
+            'tipe_id' => request('tipe_id'),
+            'kondisi_id' => request('kondisi_id'),
+            'tgl_masuk' => request('tgl_masuk'),
+        ]);
+
+        return redirect()->route('kulkas.index')->with('info', ' Data telah diubah');
+    }
+
+    public function destroy(Kulkas $kulkas)
+    {
+        $kulkas->delete();
+
+        return redirect()->route('kulkas.index')->with('danger', ' Data telah dihapus');
+    }
+
 
     public function create_pdf()
     {
@@ -54,7 +83,7 @@ class KulkasController extends Controller
         $kulkas = Kulkas::all();
         $tgl = Carbon::now()->format('d-m-Y');
         $pdf = PDF::loadView('kulkas.pdfInstore', compact('kulkas', 'tgl'));
-        $pdf->setPaper('a4', 'potrait');
+        $pdf->setPaper('A4', 'potrait');
         return $pdf->download('data-instore-kulkas.pdf', compact('kulkas'));
     }
 

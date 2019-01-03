@@ -13,7 +13,9 @@ class KondisiTableSeeder extends Seeder
     public function run()
     {
        	$kondisi = Kondisi::create([
-       		'nama_kondisi' => 'Good',
+       		'nama_kondisi' => 'Repair',
+          'nama_kondisi' => 'Preparation',
+          'nama_kondisi' => 'Disposed',
        	]);
     }
 }
