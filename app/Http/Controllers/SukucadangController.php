@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sukucadang;
+use PDF;
+use Carbon\Carbon;
 
 class SukucadangController extends Controller
 {
@@ -54,6 +56,16 @@ class SukucadangController extends Controller
     {
     	$sukucadang->delete();
     	return redirect()->route('sukucadang.index')->with('danger', ' Data telah dihapus');
+    }
+
+
+    public function laporanSukucadang()
+    {
+        $sukucadangs = Sukucadang::all();
+        $tgl = Carbon::now()->format('d-m-Y');
+        $pdf = PDF::loadView('sukucadang.laporanSukucadang', compact('sukucadangs', 'tgl'));
+        $pdf->setPaper('A4', 'potrait');
+        return $pdf->download('data-suku-cadang.pdf', compact('sukucadangs'));
     }
 
 }

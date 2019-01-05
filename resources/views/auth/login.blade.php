@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
+    <title>{{ config('app.name') }} - Login</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,54 +26,56 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
+    
+    <style>
+        body{
+            background-image: url(../images/bg.jpg);
+        }
+    </style>
 
 
 </head>
 
-<body class="bg-dark">
+<body>
 
 
     <div class="sufee-login d-flex align-content-center flex-wrap">
         <div class="container">
             <div class="login-content">
-                <div class="login-logo">
-                    <a href="index.html">
-                        <img class="align-content" src="images/logo.png" alt="">
-                    </a>
-                </div>
-                <div class="login-form">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-                        <div class="form-group">
-                            <label>{{ __('Username') }}</label>
-                            <input type="text" class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" value="{{ old('username') }}" name="username" placeholder="Username">
-                            @if ($errors->has('username'))
-                                    <div class="invalid-feedback">
-                                        {{ $errors->first('email') }}
-                                    </div>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label>{{ __('Password') }}</label>
-                            <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"  name="password" placeholder="Password">
-                            @if ($errors->has('password'))
-                                    <div class="invalid-feedback">
-                                        {{ $errors->first('password') }}
-                                    </div>
-                            @endif
-                        </div>
-                                <div class="checkbox">
-                                    <label>
-                                <input type="checkbox"> Remember Me
-                            </label>
-                                    <label class="pull-right">
-                                <a href="#">Forgotten Password?</a>
-                            </label>
 
+                <div class="login-form">
+                    <h3 style="text-align: center; font-family: sans-serif;">Login</h3>
+                    <hr>
+                    <form style="margin-top: 30px;" method="POST" action="{{ route('login') }}">
+                        @csrf
+                       <div class="row form-group">
+                               <div class="col col-md-12">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                        <input type="text" id="input1-group1" placeholder="Username" class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" value="{{ old('username') }}" name="username" placeholder="Username">
+                                        @if ($errors->has('username'))
+                                                <div class="invalid-feedback">
+                                                    {{ $errors->first('email') }}
+                                                </div>
+                                        @endif
+                                    </div>
                                 </div>
-                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Masuk</button>
-        
+                        </div>
+
+                        <div class="row form-group">
+                                <div class="col col-md-12">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-unlock-alt"></i></div>
+                                        <input type="password" id="input3-group1" name="password" placeholder="Password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}">
+                                        @if ($errors->has('password'))
+                                                <div class="invalid-feedback">
+                                                    {{ $errors->first('password') }}
+                                                </div>
+                                        @endif
+                                    </div>
+                                </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Masuk</button>
                     </form>
                 </div>
             </div>

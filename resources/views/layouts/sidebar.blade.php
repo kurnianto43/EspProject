@@ -21,18 +21,32 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plug"></i>Kulkas</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li>
-                                <i class="fa fa-puzzle-piece"></i><a href="{{ route('kulkas.index') }}">Data Instore</a>
+                                <i class="fa fa-circle"></i><a href="{{ route('kulkas.index') }}">Data Instore</a>
                             </li>
                             <li>
-                                <i class="fa fa-id-badge"></i><a href="ui-badges.html">Data Staging</a>
+                                <i class="fa fa-circle"></i><a href="ui-badges.html">Data Staging</a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="">
-                        <a href="{{ route('sukucadang.index') }}"> <i class="menu-icon fa fa-dashboard"></i>Spare Part </a>
+                        <a href="{{ route('sukucadang.index') }}"> <i class="menu-icon fa fa-database"></i>Suku Cadang </a>
                     </li>
+
                     <li class="">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Perbaikan </a>
+                        <a href="index.html"> <i class="menu-icon fa fa-cogs"></i>Perbaikan </a>
+                    </li>
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Karyawan</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                                <i class="fa fa-circle"></i><a href="{{ route('kulkas.index') }}">Data Instore</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-circle"></i><a href="ui-badges.html">Data Staging</a>
+                            </li>
+                        </ul>
                     </li>
 
                     

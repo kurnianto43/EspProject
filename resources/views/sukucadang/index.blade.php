@@ -14,7 +14,7 @@ Data Instore Kulkas
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1><i class="fa fa-plug"></i> Kulkas</h1>
+                        <h1><i class="fa fa-database"></i> Suku Cadang</h1>
                     </div>
                 </div>
             </div>
@@ -22,8 +22,8 @@ Data Instore Kulkas
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Kulkas</a></li>
-                            <li><a class="active">Data Istore</a></li>
+                            <li><a href="#">Suku cadang</a></li>
+                            <li><a class="active">Data suku cadang</a></li>
                         </ol>
                     </div>
                 </div>
@@ -39,9 +39,9 @@ Data Instore Kulkas
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Data Instore</strong>
+                                <strong class="card-title">Data Suku Cadang</strong>
                                 <a class="btn btn-primary btn-sm pull-right" href="{{ route('sukucadang.create') }}"><i class="fa fa-plus"></i> Tambah</a>
-                                 <a style="margin-right: 5px" class="btn btn-secondary btn-sm pull-right" href="#"><i class="fa fa-print"></i> Cetak</a>
+                                 <a style="margin-right: 5px" class="btn btn-secondary btn-sm pull-right" href="{{ route('sukucadang.pdf') }}"><i class="fa fa-print"></i> Cetak</a>
                             </div>
                             <div class="card-body">
 

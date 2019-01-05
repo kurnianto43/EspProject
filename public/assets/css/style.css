@@ -1811,7 +1811,9 @@ header .form-inline {
 
 .login-content {
   max-width: 540px;
-  margin: 8vh auto; }
+  margin: 8vh auto; 
+	margin-top: 180px;
+	}
 
 .login-form {
   background: #ffffff;
