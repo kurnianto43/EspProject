@@ -14,8 +14,9 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Beranda </a>
+                        <a href="{{ route('beranda') }}"> <i class="menu-icon fa fa-dashboard"></i>Beranda </a>
                     </li>
+                    <h3 class="menu-title">Menu</h3>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plug"></i>Kulkas</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -28,7 +29,7 @@
                         </ul>
                     </li>
                     <li class="">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Spare Part </a>
+                        <a href="{{ route('sukucadang.index') }}"> <i class="menu-icon fa fa-dashboard"></i>Spare Part </a>
                     </li>
                     <li class="">
                         <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Perbaikan </a>

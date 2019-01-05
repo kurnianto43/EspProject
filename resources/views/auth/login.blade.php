@@ -47,21 +47,21 @@
                         @csrf
                         <div class="form-group">
                             <label>{{ __('Username') }}</label>
-                            <input type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" value="{{ old('username') }}" name="username" placeholder="Username">
+                            <input type="text" class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" value="{{ old('username') }}" name="username" placeholder="Username">
                             @if ($errors->has('username'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('username') }}</strong>
-                                    </span>
-                                @endif
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('email') }}
+                                    </div>
+                            @endif
                         </div>
                         <div class="form-group">
-                                <label>{{ __('Password') }}</label>
-                                <input type="password" placeholder="Password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
+                            <label>{{ __('Password') }}</label>
+                            <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"  name="password" placeholder="Password">
+                            @if ($errors->has('password'))
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('password') }}
+                                    </div>
+                            @endif
                         </div>
                                 <div class="checkbox">
                                     <label>

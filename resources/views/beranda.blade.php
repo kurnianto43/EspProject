@@ -1,5 +1,9 @@
 @extends('layouts.master2')
 
+@section('title')
+    Beranda
+@endsection
+
 @section('breadcumb')
     <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -24,7 +28,55 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <h1>Anda berhasil mAsuk</h1>
-</div>
+<div class="col-lg-4 col-md-6">
+                <div class="social-box kulkas">
+                    <i class="fa fa-plug"></i>
+                    <ul>
+                        <li>
+                            <span>Kulkas Instore</span>
+                            
+                        </li>
+                        <li>
+                            <span class="count">{{ $kulkasCount }}</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--/social-box-->
+            </div>
+            <!--/.col-->
+
+
+            <div class="col-lg-4 col-md-6">
+                <div class="social-box perbaikan">
+                    <i class="fa fa-cogs"></i>
+                    <ul>
+                        <li>
+                            <span>Perbaikan</span>
+                        </li>
+                        <li>
+                            <span class="count">100</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--/social-box-->
+            </div>
+            <!--/.col-->
+
+
+            <div class="col-lg-4 col-md-6">
+                <div class="social-box pendapatan">
+                    <i class="fa fa-archive"></i>
+                    <ul>
+                        <li>
+                            <span>Pendapatan</span>
+                        </li>
+                        <li>
+                            <span class="count">Rp 250.000.000</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--/social-box-->
+            </div>
+            <!--/.col-->
+            </div>
 @endsection

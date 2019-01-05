@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Kulkas;
 
 class DashboardController extends Controller
 {
-    public function index()
+
+
+	public function index()
     {
-    	return view('beranda');
+
+    $kulkasCount=Kulkas::count();
+
+    	return view('beranda', compact('kulkasCount', $kulkasCount));
     }
 }

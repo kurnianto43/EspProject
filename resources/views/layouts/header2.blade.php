@@ -24,13 +24,13 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="/images/uploads/avatar/{{ Auth::user()->avatar }}" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="{{ asset( 'storage/' . auth()->user()->avatar) }}" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
                         
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> {{ Auth::user()->nama }}</a>
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Edit Profil</a>
+                            <a class="nav-link" href="{{ route('editProfil') }}"><i class="fa fa-cog"></i> Edit Profil</a>
 
                              <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i>

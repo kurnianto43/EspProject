@@ -661,15 +661,15 @@
         font-weight: 500;
         color: #949CA0;
         text-transform: uppercase; }
-  .social-box.facebook i {
+  .social-box.kulkas i {
     color: #fff;
-    background: #3b5998; }
-  .social-box.twitter i {
+    background: #f92b59; }
+  .social-box.perbaikan i {
     color: #fff;
     background: #00aced; }
-  .social-box.linkedin i {
+  .social-box.pendapatan i {
     color: #fff;
-    background: #4875b4; }
+    background: #16298e; }
   .social-box.google-plus i {
     color: #fff;
     background: #d34836; }
@@ -1001,18 +1001,18 @@ textarea {
   width: 100%; }
 
 aside.left-panel {
-  background: #061933;
+  background: #272c33;
   display: table-cell;
   height: 100vh;
   min-height: 100%;
   padding: 0 25px;
   vertical-align: top;
-  width: 280px;
+  width: 250px;
   -webkit-transition:width 0.3s ease;
   transition: width 0.3s ease; }
 
 .navbar {
-  background: #061933;
+  background: #272c33;
   border-radius: 0;
   border: none;
   display: block;
@@ -1032,8 +1032,9 @@ aside.left-panel {
     margin: 0;
     text-align: left;
     text-transform: capitalize;
+    margin-bottom: 8px;
     display: block;
-    min-height: 69px;
+    min-height: 51px;
     padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1294,11 +1295,11 @@ body.open .navbar .navbar-brand.hidden {
       content: "/\00a0"; }
 
 .right-panel header.header {
-  background: #c7bcef;
+  background: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   clear: both;
   display: inline-block;
-  padding: 15px 20px 13px;
+  padding: 5px 20px 5px;
   width: 100%; }
 
 .open .right-panel {
@@ -1314,14 +1315,14 @@ header.fixed-top {
 .menutoggle {
   background: #ffc107;
   border-radius: 50%;
-  color: #fff !important;
+  color: #000 !important;
   cursor: pointer;
-  font-size: 18px;
-  height: 43px;
-  line-height: 44px;
-  margin: -2px 20px 0 -57px;
+  font-size: 14px;
+  height: 38px;
+  line-height: 40px;
+  margin: 1px 20px 0 -54px;
   text-align: center;
-  width: 43px; }
+  width: 38px; }
 
 .open .menutoggle i:before {
   content: "\f0a4"; }
