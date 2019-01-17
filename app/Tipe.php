@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tipe extends Model
 {
-    protected $fillable = ['nama'];
+    protected $fillable = ['nama_tipe'];
 
     public function gdm()
     {

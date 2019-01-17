@@ -30,21 +30,30 @@
                     </li>
 
                     <li class="">
-                        <a href="{{ route('sukucadang.index') }}"> <i class="menu-icon fa fa-database"></i>Suku Cadang </a>
+                        <a href="{{ route('sukucadang.index') }}"> <i class="menu-icon fa fa-cogs"></i>Suku Cadang </a>
                     </li>
 
                     <li class="">
-                        <a href="index.html"> <i class="menu-icon fa fa-cogs"></i>Perbaikan </a>
+                        <a href="{{ route('tambahPerbaikan') }}"> <i class="menu-icon fa fa-cog"></i>Perbaikan </a>
+                    </li>
+                    <li class="">
+                        <a href="{{ route('teknisi.index') }}"> <i class="menu-icon fa fa-users"></i>Teknisi </a>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Karyawan</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-database"></i> Master Data</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li>
-                                <i class="fa fa-circle"></i><a href="{{ route('kulkas.index') }}">Data Instore</a>
+                                <i class="fa fa-circle"></i><a href="{{ route('tipe.index') }}">Tipe Kulkas</a>
                             </li>
                             <li>
-                                <i class="fa fa-circle"></i><a href="ui-badges.html">Data Staging</a>
+                                <i class="fa fa-circle"></i><a href="{{ route('kondisi.index') }}">Kondisi Kulkas</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-circle"></i><a href="{{ route('jenisperbaikan.index') }}">Jenis Perbaikan</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-circle"></i><a href="{{ route('jenismasalah.index') }}">Jenis Masalah</a>
                             </li>
                         </ul>
                     </li>
